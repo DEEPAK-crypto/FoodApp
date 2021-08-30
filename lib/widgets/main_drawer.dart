@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/filters_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget tileBuilder(String title, Icon icon, Function()? tapHandler) {
@@ -42,14 +43,15 @@ class MainDrawer extends StatelessWidget {
               Icon(
                 Icons.restaurant_menu_outlined,
               ), () {
-            Navigator.of(context).pushNamed('/');
+            Navigator.of(context).pushReplacementNamed('/');
           }),
           tileBuilder(
               'Settings',
               Icon(
                 Icons.settings_outlined,
-              ),
-              () {})
+              ), () {
+            Navigator.of(context).pushReplacementNamed(FilterScreen.routeName);
+          })
         ],
       ),
     );
